@@ -17,7 +17,6 @@ public class Spawn : MonoBehaviour {
         if (GameObject.Find("enemy") == null){
             Debug.Log("found");
             killstreak = killstreak + 1;
-            Debug.Log(killstreak);
             Instantiate(enemy, transform.position, transform.rotation);
             
         }
