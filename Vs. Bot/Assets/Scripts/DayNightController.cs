@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DayNightController : MonoBehaviour {
-
+    public GameObject lamps;
     public Light sun;
     public float secondsInFullDay = 120f;
     [Range(0, 1)]
@@ -16,6 +16,7 @@ public class DayNightController : MonoBehaviour {
     void Start()
     {
         sunInitialIntensity = sun.intensity;
+        lamps.SetActive(false);
     }
 
     void Update()
@@ -38,15 +39,19 @@ public class DayNightController : MonoBehaviour {
         if (currentTimeOfDay <= 0.23f || currentTimeOfDay >= 0.75f)
         {
             intensityMultiplier = 0;
+            lamps.SetActive(true);
         }
         else if (currentTimeOfDay <= 0.25f)
         {
             intensityMultiplier = Mathf.Clamp01((currentTimeOfDay - 0.23f) * (1 / 0.02f));
+            lamps.SetActive(true);
         }
         else if (currentTimeOfDay >= 0.73f)
         {
             intensityMultiplier = Mathf.Clamp01(1 - ((currentTimeOfDay - 0.73f) * (1 / 0.02f)));
+            lamps.SetActive(true);
         }
+        else { lamps.SetActive(false); }
 
         sun.intensity = sunInitialIntensity * intensityMultiplier;
     }
