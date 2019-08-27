@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class NewBehaviourScript : MonoBehaviour {
 
     public string joystickButton10;
+    public GameObject gun;
+
+    public Shoot shoot { get; private set; }
+
     public RectTransform healthbar;
     private bool sliding = false;
     private Vector3 slidingDirection;
@@ -110,6 +114,13 @@ public class NewBehaviourScript : MonoBehaviour {
 
         if (otherObj.gameObject.tag == "Health"){
             myhp = myhp + 20;
+        }
+        if (otherObj.gameObject.tag == "Ammo")
+        {
+            Debug.Log("ammo");
+            gun = GameObject.FindGameObjectWithTag("Gun");
+           shoot = gun.GetComponent<Shoot>();
+            shoot.showammo(30);
         }
     }
     

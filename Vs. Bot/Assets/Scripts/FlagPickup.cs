@@ -6,10 +6,13 @@ public class FlagPickup : MonoBehaviour {
   
     private int count;
     public GameObject player;
+    public GameObject flag;
     private bool decrease = false;
+    float startpos;
     // Use this for initialization
     void Start () {
-        count = 0;	
+        count = 0;
+        startpos = flag.transform.position.y;
 	}
 	
 	// Update is called once per frame
@@ -19,8 +22,14 @@ public class FlagPickup : MonoBehaviour {
             if (count > 0)
             {
                 count = count - 1;
+                
+            }
+            if (flag.transform.position.y < startpos)
+            {
+                flag.transform.Translate(0, .024f, 0);
             }
         }
+        
         }
     void OnTriggerStay(Collider otherObj)
     {
@@ -28,6 +37,9 @@ public class FlagPickup : MonoBehaviour {
         {
             decrease = false;
             count = count + 1;
+            if (flag.transform.position.y > 1){
+                flag.transform.Translate(0, -.008f, 0);
+            }
         }
     }
     private void OnTriggerExit(Collider other)
@@ -37,5 +49,4 @@ public class FlagPickup : MonoBehaviour {
             decrease = true;
         }
     }
-
 }

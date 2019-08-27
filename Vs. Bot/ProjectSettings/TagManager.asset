@@ -17,6 +17,7 @@ TagManager:
   - enemybullet
   - Health
   - enemy
+  - Gun
   layers:
   - Default
   - TransparentFX

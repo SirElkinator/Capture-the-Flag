@@ -65,6 +65,7 @@ public class Follow : MonoBehaviour {
         //Shoot at character
         if (reload == 0){
             Instantiate(Enemybullet, transform.position, transform.rotation);
+            Debug.Log("Shoot");
             reload = 100;
         }
         reload = reload - 1;

@@ -6,14 +6,7 @@ public class Shoot : MonoBehaviour {
     
     public GameObject bullet;
     int bulletWait = 0;
-    int ammo = 30;
-
-    //Refills ammo
-    void OnTriggerEnter(Collider otherObj){
-        if (otherObj.gameObject.tag == "Ammo"){
-            ammo = ammo + 30;
-        }
-    }
+    public int ammo = 30;
 
     void Update () {
 
@@ -21,11 +14,13 @@ public class Shoot : MonoBehaviour {
         Vector3 playerPos = transform.position;
         Vector3 playerDirection = transform.forward;
         Quaternion playerRotation = transform.rotation;
-        float spawnDistance = 1;
+         float spawnDistance = 1.3f;
         Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
-        
-            //Shoots the bullet
-            if (Input.GetAxis("Fire1") > .98){
+        spawnPos.y = spawnPos.y - .3f;
+        spawnPos.x = spawnPos.x + .5f;
+
+        //Shoots the bullet
+        if (Input.GetAxis("Fire1") > .98){
                 bulletWait = bulletWait + 1;
                 if (ammo > 1){
                     if (bulletWait >= 8){
@@ -36,5 +31,10 @@ public class Shoot : MonoBehaviour {
                 }
             }
 
+    }
+   
+    public void showammo(int x)
+    {
+        ammo = ammo + x;
     }
 }

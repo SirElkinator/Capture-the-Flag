@@ -8,5 +8,11 @@ public class Bulletmove : MonoBehaviour {
 	void Update () {
         transform.Translate(0f, 0f, Time.deltaTime * 30);
     }
-
+   void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject, 0f);
+        }
+    }
 }
