@@ -3,28 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cameraup : MonoBehaviour {
-
-    public GameObject target;
-    int distancestop = 1;
-   
-    void Update () {
-
-        //Zooms camera in
-        if (distancestop > 0){
-            if (Input.GetAxis("Fire3") > .2){
-                transform.Translate(0f, 0f, 5 * Time.deltaTime);
-                distancestop = distancestop - 1;
-            }
+       
+       void Update(){
+           if (transform.localRotation.x > -.4){
+        if (Input.GetAxis("CameraUp") > .2)
+        {
+            transform.Rotate(Vector3.left * Time.deltaTime * 90);
         }
-
-        //Zooms camera in
-        if (distancestop < 50){
-            if (Input.GetAxis("Fire3") < -.2){
-                transform.Translate(0f, 0f, -5 * Time.deltaTime);
-                distancestop = distancestop + 1;
-            }
+           }
+        //Turns camera right
+        //if camera is less than straight up
+        if (transform.localRotation.x < .4){
+        if (Input.GetAxis("CameraUp") < -.2)
+        {
+            transform.Rotate(Vector3.right * Time.deltaTime * 90);
         }
-            
-    }
+        }
+       }
 }
 
