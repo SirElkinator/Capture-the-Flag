@@ -5262,7 +5262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1006016593528238, guid: 79e713992750ed84691c105660336e1d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4826303932544844, guid: 79e713992750ed84691c105660336e1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7221,7 +7221,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711475222}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 289da9a4a7023214bb4a557dde573959, type: 3}
 --- !u!4 &711475227
 Transform:
   m_ObjectHideFlags: 0
@@ -7231,7 +7231,7 @@ Transform:
   m_GameObject: {fileID: 711475222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1000, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -12529,9 +12529,10 @@ GameObject:
   - component: {fileID: 1133863549}
   - component: {fileID: 1133863548}
   - component: {fileID: 1133863552}
+  - component: {fileID: 1133863553}
   m_Layer: 0
   m_Name: BlueFlag
-  m_TagString: Untagged
+  m_TagString: BluePole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12625,7 +12626,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  flag: {fileID: 0}
+  flag: {fileID: 2094843922}
+--- !u!114 &1133863553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133863547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6530ad8169b154847abdc3da2d74de67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redFlag: {fileID: 0}
 --- !u!1 &1243953221
 GameObject:
   m_ObjectHideFlags: 0
@@ -12641,7 +12655,7 @@ GameObject:
   - component: {fileID: 1243953226}
   m_Layer: 0
   m_Name: RedFlag
-  m_TagString: Untagged
+  m_TagString: RedPole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14161,8 +14175,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094843922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09999603, y: 0.776, z: 2.399998}
-  m_LocalScale: {x: 0.24999982, y: 0.1, z: 1.25}
+  m_LocalPosition: {x: 0.1, y: 0.591, z: 4.43}
+  m_LocalScale: {x: 0.25, y: 0.8, z: 8}
   m_Children: []
   m_Father: {fileID: 1133863551}
   m_RootOrder: 1
@@ -14239,7 +14253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  newFlag: {fileID: 0}
+  newFlag: {fileID: 1423765594378218, guid: b08caad41f08c1240bdcc85467c993e4, type: 3}
 --- !u!1001 &2135406375
 PrefabInstance:
   m_ObjectHideFlags: 0

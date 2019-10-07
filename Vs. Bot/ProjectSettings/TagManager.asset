@@ -18,6 +18,9 @@ TagManager:
   - Health
   - enemy
   - Gun
+  - BluePole
+  - RedPole
+  - RedPickup
   layers:
   - Default
   - TransparentFX

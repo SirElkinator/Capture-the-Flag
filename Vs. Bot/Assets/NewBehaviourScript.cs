@@ -7,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour {
 
     public string joystickButton10;
     public GameObject gun;
-
+    int jumpcount = 0;
     public Shoot shoot { get; private set; }
 
     public RectTransform healthbar;
@@ -22,16 +22,16 @@ public class NewBehaviourScript : MonoBehaviour {
 
     void Update () {
 
-        if (Input.GetKeyDown("g"))
-        {
-            Time.timeScale = 0;
+        //if (Input.GetKeyDown("joystick button 9"))
+        //{
+          //  Time.timeScale = 0;
             
-        }
+       // }
 
-        if (Input.GetKeyUp("g"))
-        {
-            Time.timeScale = 1;
-        }
+        //if (Input.GetKeyUp("joystick button 9"))
+        //{
+          //  Time.timeScale = 1;
+        //}
 
         //Fall
         if (moveDirection.y > gravity * -1){
@@ -45,9 +45,14 @@ public class NewBehaviourScript : MonoBehaviour {
             controller.Move(slidingDirection * 2 * Time.deltaTime);
         }
 
-        if (Input.GetAxis("Jump") > .01)
+        if ((Input.GetAxis("Jump") > .01) && (jumpcount < 10))
         {
+            jumpcount = jumpcount+1;
+            Debug.Log(Input.GetAxis("Jump"));
             transform.Translate(0f, 1, 0f);
+        }
+        if (transform.position.y < .5){
+            jumpcount=0;
         }
 
 
